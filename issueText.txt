@@ -1,0 +1,67 @@
+### Are you requesting a feature or reporting a bug?
+Bug
+
+
+### What is your Test Scenario?
+Using a custom test runner via 'createRunner()' written in TypeScript and executing the test scenarios on a Windows 10 and Windows 7 machine, run any tests against Chrome or Firefox.
+
+
+### What is the Current behavior?
+When the runner starts, and either 'chrome' or 'firefox' are passed into the runner's 'browsers()' function, an error appears and I am unable to run the tests.
+
+```
+{ Error: Was unable to open the browser "chrome:" due to error.
+
+Error: spawn UNKNOWN
+    at ChildProcess.spawn (internal/child_process.js:366:11)
+    at spawn (child_process.js:551:9)
+    at c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\testcafe\lib\utils\temp-directory\cleanup-process\index.js:149:58
+    at Generator.next (<anonymous>:null:null)
+    at step (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
+    at c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\babel-runtime\helpers\asyncToGenerator.js:35:14
+    at new Promise (<anonymous>:null:null)
+    at new F (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\core-js\library\modules\_export.js:36:28)
+    at c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\babel-runtime\helpers\asyncToGenerator.js:14:12
+    at initPromise.initPromise.then (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\testcafe\lib\utils\temp-directory\cleanup-process\index.js:179:29)
+    at Array.invokeCallback (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\pinkie\index.js:60:12)
+    at Immediate.asyncFlush (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\pinkie\index.js:17:19)
+    at runCallback (timers.js:706:11)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+    at process.topLevelDomainCallback (domain.js:126:23)
+
+    at c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\testcafe\lib\browser\connection\index.js:120:37
+    at Generator.throw (<anonymous>:null:null)
+    at step (c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
+    at c:\src\PTWS\TestingPtws\Applications\Web\PTWS\TestCafe\node_modules\babel-runtime\helpers\asyncToGenerator.js:30:13
+
+  code: 'E1038',
+```
+
+
+### What is the Expected behavior?
+The browser should open up at the tests should begin to execute. We are able to execute TestCafe tests on Windows using the CLI for Chrome and Firefox without issue, and this issue with the custom test runner does not occur at all on our Macs.  
+
+
+### How would you reproduce the current behavior (if this is a bug)?
+On a Windows 7 or 10 machine, run the TypeScript code below with 'ts-node FILE_NAME.ts'. I have since set 'chrome' in my PATH environment variable and I'm able to execute it successfully in Command Prompt, though the problem still persists.
+
+
+#### Provide the test code and the tested page URL (if applicable)
+<!-- Share a public accessible link to your application or provide a simple app which we can run. -->
+ 
+Your website URL (or attach your complete example):
+
+Your complete test code (or attach your test files)
+
+```js
+
+```
+### Your Environment details:
+ 
+* testcafe version:                   <!-- run `testcafe -v` -->
+* node.js version:                    <!-- run `node -v` -->
+* command-line arguments:  <!-- example: "testcafe ie,chrome -e test.js" -->
+* browser name and version: <!-- example: IE 11, Chrome 69, Firefox 100, etc. -->
+* platform and version:          <!-- example: "macOS 10.14, Windows, Linux Ubuntu 18.04.1, iOS 12 -->
+* other:                                   <!-- any notes you consider important -->
