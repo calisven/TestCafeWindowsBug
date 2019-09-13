@@ -1,12 +1,19 @@
 
 ## Reproduce TestCafe Windows Custom Test Runner Issue
 
+# Prereqs
+
+1. Chrome or Firefox must be installed
+2. You must be using a Windows 7 or 10 box (though it will likely be reproducible on other versions as well)
+
+# Steps to Reproduce
+
 1. ```yarn install``` or ```npm install```
-2. yarn run test
+2. ```yarn run test```or ```npm run test```
 
 The following error will appear:
 
-$ ts-node runner.ts
+$ ```ts-node runner.ts
 Error while executing Test Cafe
 
 { Error: Was unable to open the browser "chrome:" due to error.
@@ -33,3 +40,5 @@ Error: spawn UNKNOWN
     at Generator.throw (<anonymous>:null:null)
     at step (C:\src\PTWS\GitHubIssues\TestCafeBrowserIssue\node_modules\babel-runtime\helpers\asyncToGenerator.js:17:30)
     at C:\src\PTWS\GitHubIssues\TestCafeBrowserIssue\node_modules\babel-runtime\helpers\asyncToGenerator.js:30:13
+
+    ```
